@@ -27,13 +27,13 @@ while True:
     respCode = getUrl()
     match respCode:
         case 200:
-            print(f"{respCode} It's up!")
+            print(f'{respCode} It\'s up!')
             wb.open_new_tab(url)
             copy(url)
             break
         case 403:
             if today == monday:
-                print(respCode)
+                print(f'{respCode} Not up yet')
                 sleep(1)
             else:
                 print(f'{respCode} New B&R coming!')
