@@ -15,7 +15,7 @@ def getUrl():
     response = req.get(url)
     return response.status_code
 
-#Checks the two upcoming Mondays for a B&R.
+#Checks the two upcoming Mondays for a B&R
 i = 1
 monday = 0
 today = date.today().weekday()
