@@ -1,7 +1,7 @@
 # MTG B&R Checker
 
 
-### Requirements
+## Requirements
 
 - Python 3.10+
 
