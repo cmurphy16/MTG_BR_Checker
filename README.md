@@ -16,7 +16,7 @@ This is used to copy the B&R link to your clipboard automatically so you can pas
 ## What does this even do?
 When Wizards of the Coast create a Banned & Restricted Announcement you'll be greeted with "You are not authorized the view this page." when you go to the link, because it hasn't been released yet.
 
-That page has a response code of 403 Forbidden; and since every B&R is on a Monday, and the links are basically the same with a different date in them we can automatically create a link and check future Monday links for a 403 response code. If there is one we know there's a B&R planned that Monday.
+That page has a response code of 403 Forbidden. Since every B&R is on a Monday, and the links are basically all the same with a different date in them we can automatically create a link and check future Monday links for a 403 response code. If there is one we know there's a B&R planned for that Monday.
 
 
 ## Contents
