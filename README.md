@@ -5,7 +5,7 @@
 
 - Python 3.10+
 
-This script makes use of a Match-Case statment which was introduced in Python 3.10.
+These scripts makes use of a Match-Case statment which was introduced in Python 3.10.
 
 - PyClip
 
