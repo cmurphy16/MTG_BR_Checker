@@ -14,7 +14,7 @@ brDate = date.today().strftime('%B-%d-%Y')
 url = f'https://magic.wizards.com/en/news/announcements/{brDate.lower()}-banned-and-restricted-announcement?aoeui'
 print(url)
 
-
+#Checks if there is a B&R and waits for it to release if there is one
 while True:
     respCode = getUrl()
     match respCode:
