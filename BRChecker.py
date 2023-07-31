@@ -30,10 +30,8 @@ while i <= 2:
             print(f'{respCode} New B&R coming!')
             wb.open_new_tab(url)
             copy(url)
-            i += 1
         case 404:
             print(f'{respCode} No new B&R')
-            i += 1
         case _:
             print(respCode)
-            i += 1
+    i += 1
