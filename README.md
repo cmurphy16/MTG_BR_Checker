@@ -18,6 +18,7 @@ When Wizards of the Coast create a Banned & Restricted Announcement you'll be gr
 
 That page has a response code of 403 Forbidden. Since every B&R is on a Monday, and the links are basically all the same with a different date in them we can automatically create a link and check future Monday links for a 403 response code. If there is one we know there's a B&R planned for that Monday.
 
+So now you know there's a B&R on Monday. Instead of mashing F5 until it's up we can automatically check until it's released and open a new tab to it the moment it goes up.
 
 ## Contents
 This project consists of two scripts
