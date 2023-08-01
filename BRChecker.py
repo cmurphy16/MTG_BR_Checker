@@ -3,7 +3,7 @@ import requests as req
 from datetime import date, timedelta
 from pyclip import copy
 
-#Gets the date of today if it's Monday or next Monday if it's after Monday
+#Gets the date of a Monday when daysFwd is a multiple of 7
 def mondayCheck(daysFwd):
     daysDiff = 0 - date.today().weekday()
     daysDiff += daysFwd
