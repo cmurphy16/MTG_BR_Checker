@@ -4,10 +4,9 @@ from datetime import date, timedelta
 from pyclip import copy
 
 #Gets the date of today if it's Monday or next Monday if it's after Monday
-def mondayCheck(today, monday, daysFwd):
-    daysDiff = monday - today
-    if daysDiff <= 0: 
-        daysDiff += daysFwd
+def mondayCheck(daysFwd):
+    daysDiff = 0 - date.today().weekday()
+    daysDiff += daysFwd
     return date.today() + timedelta(daysDiff)
 
 #Loads URL and returns response code
@@ -16,12 +15,9 @@ def getUrl():
     return response.status_code
 
 #Checks the two upcoming Mondays for a B&R
-i = 1
-monday = 0
-today = date.today().weekday()
-while i <= 2:
+for i in range(1,3):
     daysFwd = i * 7
-    brDate = mondayCheck(today, monday, daysFwd).strftime('%B-%d-%Y') 
+    brDate = mondayCheck(daysFwd).strftime('%B-%d-%Y') 
     url = f'https://magic.wizards.com/en/news/announcements/{brDate.lower()}-banned-and-restricted-announcement?aoeui'
     print(url)
     respCode = getUrl()
