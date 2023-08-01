@@ -30,4 +30,3 @@ for i in range(1,3):
             print(f'{respCode} No new B&R')
         case _:
             print(respCode)
-    i += 1
