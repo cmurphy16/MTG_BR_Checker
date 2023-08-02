@@ -5,8 +5,8 @@ from pyclip import copy
 from time import sleep
 
 #Assigns date to variable formatted to match B&R url
-brDate = date.today().strftime('%B-%d-%Y') 
-url = f'https://magic.wizards.com/en/news/announcements/{brDate.lower()}-banned-and-restricted-announcement?aoeui'
+brDate = date.today().strftime('%B-%d-%Y').lower()
+url = f'https://magic.wizards.com/en/news/announcements/{brDate}-banned-and-restricted-announcement?aoeui'
 print(url)
 
 #Checks if there is a B&R and waits for it to release if there is one
