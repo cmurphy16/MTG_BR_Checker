@@ -3,18 +3,24 @@ import requests as req
 from datetime import date, timedelta
 from pyclip import copy
 
-#Gets the date of a Monday when daysFwd is a multiple of 7
+#Gets the date of a Monday
 def mondayCheck(daysFwd):
-    daysDiff = 0 - date.today().weekday()
-    daysDiff += daysFwd
+    if daysFwd % 7 == 0:
+        daysDiff = 0 - date.today().weekday()
+        daysDiff += daysFwd
     return date.today() + timedelta(daysDiff)
 
-#Checks the two upcoming Mondays for a B&R
-for i in range(1,3):
+#Creates B&R URL with Monday date
+def makeUrl(i):
     daysFwd = i * 7
     brDate = mondayCheck(daysFwd).strftime('%B-%d-%Y') 
     url = f'https://magic.wizards.com/en/news/announcements/{brDate.lower()}-banned-and-restricted-announcement?aoeui'
     print(url)
+    return url
+
+#Checks the two upcoming Mondays for a B&R
+for i in range(1,3):
+    url = makeUrl(i)
     respCode = req.get(url).status_code
     match respCode:
         case 403:
