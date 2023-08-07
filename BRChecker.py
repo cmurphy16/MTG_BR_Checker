@@ -13,7 +13,7 @@ def mondayCheck(daysFwd):
 #Creates B&R URL with Monday date
 def makeUrl(i):
     daysFwd = i * 7
-    brDate = mondayCheck(daysFwd).strftime('%B-%d-%Y').lower()
+    brDate = mondayCheck(daysFwd).strftime('%B-%#d-%Y').lower()
     url = f'https://magic.wizards.com/en/news/announcements/{brDate}-banned-and-restricted-announcement?aoeui'
     print(url)
     return url
