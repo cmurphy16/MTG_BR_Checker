@@ -8,13 +8,13 @@ from time import sleep
 #Formats the date based on OS
 def dateFormat():
     if system() == 'Windows':
-        d = date.today().strftime('%B-%#d-%Y').lower()
+        d = '%B-%#d-%Y'
     else:
-        d = date.today().strftime('%B-%-d-%Y').lower()
+        d = '%B-%-d-%Y'
     return d
 
 #Assigns date to variable formatted to match B&R url
-brDate = dateFormat()
+brDate = date.today().strftime(dateFormat()).lower()
 url = f'https://magic.wizards.com/en/news/announcements/{brDate}-banned-and-restricted-announcement'
 print(url)
 

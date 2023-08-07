@@ -12,17 +12,17 @@ def mondayCheck(daysFwd):
     return date.today() + timedelta(daysDiff)
 
 #Formats the date based on OS
-def dateFormat(daysFwd):
+def dateFormat():
     if system() == 'Windows':
-        d = mondayCheck(daysFwd).strftime('%B-%#d-%Y').lower()
+        d = '%B-%#d-%Y'
     else:
-        d = mondayCheck(daysFwd).strftime('%B-%-d-%Y').lower()
+        d = '%B-%-d-%Y'
     return d
 
 #Creates B&R URL with Monday date
 def makeUrl(i):
     daysFwd = i * 7
-    brDate = dateFormat(daysFwd)
+    brDate = mondayCheck(daysFwd).strftime(dateFormat()).lower()
     url = f'https://magic.wizards.com/en/news/announcements/{brDate}-banned-and-restricted-announcement?aoeui'
     print(url)
     return url
