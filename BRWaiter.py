@@ -1,11 +1,20 @@
 import webbrowser as wb
 import requests as req
 from datetime import date
+from platform import system
 from pyclip import copy
 from time import sleep
 
+#Formats the date based on OS
+def dateFormat():
+    if system() == 'Windows':
+        d = date.today().strftime('%B-%#d-%Y').lower()
+    else:
+        d = date.today().strftime('%B-%-d-%Y').lower()
+    return d
+
 #Assigns date to variable formatted to match B&R url
-brDate = date.today().strftime('%B-%#d-%Y').lower()
+brDate = dateFormat()
 url = f'https://magic.wizards.com/en/news/announcements/{brDate}-banned-and-restricted-announcement'
 print(url)
 
