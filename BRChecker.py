@@ -13,11 +13,7 @@ def mondayCheck(daysFwd):
 
 #Formats the date based on OS
 def dateFormat():
-    if system() == 'Windows':
-        d = '%B-%#d-%Y'
-    else:
-        d = '%B-%-d-%Y'
-    return d
+    return '%B-%#d-%Y' if system() == 'Windows' else '%B-%-d-%Y'
 
 #Creates B&R URL with Monday date
 def makeUrl(i):

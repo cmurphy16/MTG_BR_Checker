@@ -7,11 +7,7 @@ from time import sleep
 
 #Formats the date based on OS
 def dateFormat():
-    if system() == 'Windows':
-        d = '%B-%#d-%Y'
-    else:
-        d = '%B-%-d-%Y'
-    return d
+    return '%B-%#d-%Y' if system() == 'Windows' else '%B-%-d-%Y'
 
 #Assigns date to variable formatted to match B&R url
 brDate = date.today().strftime(dateFormat()).lower()
