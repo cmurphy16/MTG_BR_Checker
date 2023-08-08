@@ -19,13 +19,12 @@ def dateFormat():
 def makeUrl(i):
     daysFwd = i * 7
     brDate = mondayCheck(daysFwd).strftime(dateFormat()).lower()
-    url = f'https://magic.wizards.com/en/news/announcements/{brDate}-banned-and-restricted-announcement'
-    print(url)
-    return url
+    return f'https://magic.wizards.com/en/news/announcements/{brDate}-banned-and-restricted-announcement'
 
 #Checks the two upcoming Mondays for a B&R
 for i in range(1,3):
     url = makeUrl(i)
+    print(url)
     respCode = req.get(url).status_code
     match respCode:
         case 403:
