@@ -23,7 +23,7 @@ def dateFormat():
 def makeUrl(i):
     daysFwd = i * 7
     brDate = mondayCheck(daysFwd).strftime(dateFormat()).lower()
-    url = f'https://magic.wizards.com/en/news/announcements/{brDate}-banned-and-restricted-announcement?aoeui'
+    url = f'https://magic.wizards.com/en/news/announcements/{brDate}-banned-and-restricted-announcement'
     print(url)
     return url
 
