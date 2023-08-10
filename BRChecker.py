@@ -4,18 +4,15 @@ from datetime import date, timedelta
 from platform import system
 from pyclip import copy
 
-#Gets the date of a Monday
 def mondayCheck(daysFwd):
     if daysFwd % 7 == 0:
         daysDiff = 0 - date.today().weekday()
         daysDiff += daysFwd
     return date.today() + timedelta(daysDiff)
 
-#Formats the date based on OS
 def dateFormat():
     return '%B-%#d-%Y' if system() == 'Windows' else '%B-%-d-%Y'
 
-#Creates B&R URL with Monday date
 def makeUrl(i):
     daysFwd = i * 7
     brDate = mondayCheck(daysFwd).strftime(dateFormat()).lower()

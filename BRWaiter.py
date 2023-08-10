@@ -5,11 +5,9 @@ from platform import system
 from pyclip import copy
 from time import sleep
 
-#Formats the date based on OS
 def dateFormat():
     return '%B-%#d-%Y' if system() == 'Windows' else '%B-%-d-%Y'
 
-#Assigns date to variable formatted to match B&R url
 brDate = date.today().strftime(dateFormat()).lower()
 url = f'https://magic.wizards.com/en/news/announcements/{brDate}-banned-and-restricted-announcement'
 print(url)
