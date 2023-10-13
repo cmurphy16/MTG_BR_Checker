@@ -22,11 +22,15 @@ So now you know there's a B&R on Monday. Instead of mashing F5 until it's up we 
 
 ## Contents
 This project consists of two scripts
+
  - BRChecker.py
 
-BRChecker will check the B&R links for the two upcoming Mondays.
+BRChecker will check the upcoming Monday(s) for a B&R.
 
  - BRWaiter.py
 
 BRWaiter is used to check a known B&R link on the morning of and will check once a second until the B&R is released.
 
+ - BRFuncs.py
+
+BRFuncs contains functions used by both of the main scripts
