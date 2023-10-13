@@ -1,6 +1,6 @@
-import BRFuncs as br
 import webbrowser as wb
 import requests as req
+import BRFuncs as br
 from pyclip import copy
 
 #Checks the two upcoming Mondays for a B&R
