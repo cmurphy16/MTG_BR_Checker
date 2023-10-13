@@ -1,7 +1,6 @@
 import webbrowser as wb
 import requests as req
 import BRFuncs as br
-from datetime import date
 from pyclip import copy
 from time import sleep
 
