@@ -5,8 +5,7 @@ from datetime import date
 from pyclip import copy
 from time import sleep
 
-brDate = date.today().strftime(br.dateFormat()).lower()
-url = f'https://magic.wizards.com/en/news/announcements/{brDate}-banned-and-restricted-announcement'
+url = br.makeUrl(0)
 print(url)
 
 #Checks if there is a B&R and waits for it to release if there is one

@@ -11,6 +11,9 @@ def dateFormat():
     return '%B-%#d-%Y' if system() == 'Windows' else '%B-%-d-%Y'
 
 def makeUrl(i):
-    daysFwd = i * 7
-    brDate = mondayCheck(daysFwd).strftime(dateFormat()).lower()
+    if i == 0:
+        brDate = date.today().strftime(dateFormat()).lower()
+    else:
+        daysFwd = i * 7
+        brDate = mondayCheck(daysFwd).strftime(dateFormat()).lower()
     return f'https://magic.wizards.com/en/news/announcements/{brDate}-banned-and-restricted-announcement'
