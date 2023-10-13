@@ -3,8 +3,11 @@ import requests as req
 import BRFuncs as br
 from pyclip import copy
 
-#Checks the two upcoming Mondays for a B&R
-for i in range(1,3):
+#How many future Monday URLs to check
+weeksAhead = 1
+
+#Checks the upcoming Monday(s) for a B&R
+for i in range(1,weeksAhead+1):
     url = br.makeUrl(i)
     print(url)
     respCode = req.get(url).status_code
