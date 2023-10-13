@@ -1,3 +1,4 @@
+import BRFuncs as br
 import webbrowser as wb
 import requests as req
 from datetime import date
@@ -5,10 +6,7 @@ from platform import system
 from pyclip import copy
 from time import sleep
 
-def dateFormat():
-    return '%B-%#d-%Y' if system() == 'Windows' else '%B-%-d-%Y'
-
-brDate = date.today().strftime(dateFormat()).lower()
+brDate = date.today().strftime(br.dateFormat()).lower()
 url = f'https://magic.wizards.com/en/news/announcements/{brDate}-banned-and-restricted-announcement'
 print(url)
 
