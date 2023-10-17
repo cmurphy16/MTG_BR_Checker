@@ -16,12 +16,9 @@ while True:
             wb.open_new_tab(url)
             copy(url)
             break
-        case 403:
+        case 403 | 404:
             print(f'{respCode} Not up yet')
             sleep(1)
-        case 404:
-            print(f'{respCode} No new B&R')
-            break
         case _:
             print(respCode)
             break
