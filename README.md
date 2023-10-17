@@ -25,11 +25,11 @@ This project consists of two scripts
 
  - BRChecker.py
 
-BRChecker will check the upcoming Monday(s) for a B&R.
+BRChecker will check the upcoming Monday(s) for a B&R. **UPDATE** After the past two B&Rs (Aug 7, and Oct 16, 2023) never going 403 early, this script may become deprecated if it's no longer able to provide a use.
 
  - BRWaiter.py
 
-BRWaiter is used to check a known B&R link on the morning of and will check once a second until the B&R is released.
+BRWaiter is used to check a B&R link on the morning of and will check every second until the B&R is released. When the B&R is released a new tab will be opened in your browser and the link copied to your clipboard.
 
  - BRFuncs.py
 
