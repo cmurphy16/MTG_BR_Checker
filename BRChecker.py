@@ -8,10 +8,7 @@ from time import sleep
 def dateFormat():
     return '%B-%#d-%Y' if system() == 'Windows' else '%B-%-d-%Y'
 
-def makeUrl():
-    return f'https://magic.wizards.com/en/news/announcements/{date.today().strftime(dateFormat()).lower()}-banned-and-restricted-announcement'
-
-url = makeUrl()
+url = f'https://magic.wizards.com/en/news/announcements/{date.today().strftime(dateFormat()).lower()}-banned-and-restricted-announcement'
 print(url)
 
 while True:
