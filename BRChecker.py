@@ -1,22 +1,30 @@
 import webbrowser as wb
 import requests as req
-import BRFuncs as br
+from platform import system
+from datetime import date
 from pyclip import copy
+from time import sleep
 
-#How many future Monday URLs to check
-weeksAhead = 1
+def dateFormat():
+    return '%B-%#d-%Y' if system() == 'Windows' else '%B-%-d-%Y'
 
-#Checks the upcoming Monday(s) for a B&R
-for i in range(1,weeksAhead+1):
-    url = br.makeUrl(i)
-    print(url)
+def makeUrl():
+    return f'https://magic.wizards.com/en/news/announcements/{date.today().strftime(dateFormat()).lower()}-banned-and-restricted-announcement'
+
+url = makeUrl()
+print(url)
+
+while True:
     respCode = req.get(url).status_code
     match respCode:
-        case 403:
-            print(f'{respCode} New B&R coming!')
+        case 200:
+            print(f'{respCode} It\'s up!')
             wb.open_new_tab(url)
             copy(url)
-        case 404:
-            print(f'{respCode} No new B&R')
+            break
+        case 403 | 404:
+            print(f'{respCode} Not up yet')
+            sleep(1)
         case _:
             print(respCode)
+            break

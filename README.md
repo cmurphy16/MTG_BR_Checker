@@ -14,14 +14,10 @@ These scripts makes use of a Match-Case statment which was introduced in Python 
 This is used to copy the B&R link to your clipboard automatically so you can paste it where needed quicker and easier.
 
 ## What does this even do?
-When Wizards of the Coast create a Banned & Restricted Announcement you'll be greeted with "You are not authorized the view this page." when you go to the link, because it hasn't been released yet.
+Instead of mashing F5 on Monday until the new B&R is released, this will automatically check until it's released and open a new tab to it the moment it goes up.
 
-That page has a response code of 403 Forbidden. Since every B&R is on a Monday, and the links are basically all the same with a different date in them we can automatically create a link and check future Monday links for a 403 response code. If there is one we know there's a B&R planned for that Monday.
-
-So now you know there's a B&R on Monday. Instead of mashing F5 until it's up we can automatically check until it's released and open a new tab to it the moment it goes up.
-
-## Contents
-This project consists of two scripts
+## Deprecated folder
+This project consists of two scripts for the old version of this repo that is no longer maintained as of the Dec 4, 2023 B&R update
 
  - BRChecker.py
 
