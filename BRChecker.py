@@ -8,20 +8,29 @@ from time import sleep
 def dateFormat():
     return '%B-%#d-%Y' if system() == 'Windows' else '%B-%-d-%Y'
 
-url = f'https://magic.wizards.com/en/news/announcements/{date.today().strftime(dateFormat()).lower()}-banned-and-restricted-announcement'
-print(url)
+def isUp(urls):
+    for url in urls:
+        print(url)
+        respCode = req.get(url).status_code
+        match respCode:
+            case 200:
+                print(f'{respCode} It\'s up!')
+                wb.open_new_tab(url)
+                copy(url)
+                return True
+            case 403 | 404:
+                print(f'{respCode} Not up yet')
+                sleep(0.25)
+            case _:
+                print(f'{respCode} Unexpected response code')
+                sleep(1)
+                return
 
-while True:
-    respCode = req.get(url).status_code
-    match respCode:
-        case 200:
-            print(f'{respCode} It\'s up!')
-            wb.open_new_tab(url)
-            copy(url)
-            break
-        case 403 | 404:
-            print(f'{respCode} Not up yet')
-            sleep(1)
-        case _:
-            print(respCode)
-            break
+brDate = date.today().strftime(dateFormat()).lower()
+urls = [f'https://magic.wizards.com/en/news/announcements/banned-and-restricted-{brDate}',
+        f'https://magic.wizards.com/en/news/announcements/{brDate}-banned-and-restricted',
+        f'https://magic.wizards.com/en/news/announcements/banned-and-restricted-announcement-{brDate}',
+        f'https://magic.wizards.com/en/news/announcements/{brDate}-banned-and-restricted-announcement']
+
+while isUp(urls) != True:
+    isUp(urls)
