@@ -3,15 +3,14 @@
 
 ## Requirements
 
-- Python 3.10+
+- Python 3.10+.
+  - This script makes use of a Match-Case statment which was introduced in Python 3.10.
 
-These scripts makes use of a Match-Case statment which was introduced in Python 3.10.
+- PyClip `pip install pyclip`
+  - This is used to copy the B&R link to your clipboard automatically so you can paste it where needed quicker and easier.
 
-- PyClip
-
-`pip install pyclip`
-
-This is used to copy the B&R link to your clipboard automatically so you can paste it where needed quicker and easier.
+- Requests `pip install requests`
+  - This is use to pull the web page and specifically the response code
 
 ## What does this even do?
 Instead of mashing F5 on Monday until the new B&R is released, this will automatically check until it's released and open a new tab to it the moment it goes up.
