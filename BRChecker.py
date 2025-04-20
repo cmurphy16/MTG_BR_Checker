@@ -21,10 +21,10 @@ def isUp(urls):
             case 403 | 404:
                 print(f'{respCode} Not up yet')
                 sleep(0.25)
+                return False
             case _:
                 print(f'{respCode} Unexpected response code')
-                sleep(1)
-                return
+                return True
 
 brDate = date.today().strftime(dateFormat()).lower()
 urls = [f'https://magic.wizards.com/en/news/announcements/banned-and-restricted-{brDate}',
