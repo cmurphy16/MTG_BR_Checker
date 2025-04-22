@@ -21,7 +21,6 @@ def isUp(urls):
             case 403 | 404:
                 print(f'{respCode} Not up yet')
                 sleep(0.25)
-                return False
             case _:
                 print(f'{respCode} Unexpected response code')
                 return True
